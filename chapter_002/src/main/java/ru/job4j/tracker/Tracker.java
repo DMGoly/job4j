@@ -1,9 +1,16 @@
 package ru.job4j.tracker;
 
-import java.lang.reflect.Array;
+
 import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Random;
+
+
+/**
+ * Package for Tracker
+ *
+ * @author Dmitry Golyshkin(dmgoly@gmail.com)
+ * @version $Id$
+ * @since 0.1
+ **/
 
 public class Tracker {
 

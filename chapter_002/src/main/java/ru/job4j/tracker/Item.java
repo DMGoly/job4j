@@ -2,6 +2,14 @@ package ru.job4j.tracker;
 
 import java.util.Objects;
 
+/**
+ * Package for Tracker.
+ *
+ * @author Dmitry Golyshkin(dmgoly@gmail.com)
+ * @version $Id$
+ * @since 0.1
+ **/
+
 public class Item {
     private String id;
     private String name;
