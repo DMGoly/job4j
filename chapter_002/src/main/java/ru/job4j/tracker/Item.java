@@ -13,14 +13,25 @@ import java.util.Objects;
 public class Item {
     private String id;
     private String name;
-    private String decs;
+    private String desc;
     private long time;
+
+    public Item(String name,String desc){
+        this.name = name;
+        this.desc = desc;
+    }
+    public Item(String id,String name,String desc){
+        this.id = id;
+        this.name = name;
+        this.desc = desc;
+    }
 
     public Item(String name, String decs, long time) {
         this.name = name;
-        this.decs = decs;
+        this.desc = decs;
         this.time = time;
     }
+
 
     public String getId() {
         return id;
@@ -39,11 +50,11 @@ public class Item {
     }
 
     public String getDecs() {
-        return decs;
+        return desc;
     }
 
     public void setDecs(String decs) {
-        this.decs = decs;
+        this.desc = decs;
     }
 
     public long getTime() {
@@ -62,11 +73,11 @@ public class Item {
         return time == item.time &&
                 Objects.equals(id, item.id) &&
                 Objects.equals(name, item.name) &&
-                Objects.equals(decs, item.decs);
+                Objects.equals(desc, item.desc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, decs, time);
+        return Objects.hash(id, name, desc, time);
     }
 }

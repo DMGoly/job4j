@@ -25,7 +25,7 @@ public class Tracker {
 
     private String generateId() {
 
-         return String.valueOf(System.currentTimeMillis() + Math.random() * 21);
+         return String.valueOf(System.currentTimeMillis() + Math.random());
     }
 
 
@@ -79,9 +79,9 @@ public class Tracker {
     }
 
     public Item[] findByName(String key){
-        Item[] result = new Item[items.length];
+        Item[] result = new Item[position];
         int count = 0;
-        for (int i = 0; i < items.length; i++){
+        for (int i = 0; i < position; i++){
             if (items[i].getName().equals(key)){
             result[count] = items[i];
             count++;
