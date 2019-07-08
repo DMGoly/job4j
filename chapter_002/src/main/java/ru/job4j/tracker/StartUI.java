@@ -1,6 +1,5 @@
 package ru.job4j.tracker;
 
-import java.util.Arrays;
 
 public class StartUI {
 
@@ -66,7 +65,6 @@ public class StartUI {
                     this.deleteItem();
                     break;
                 case FindById:
-                                        //      System.out.println(tracker.findById(this.input.askID()).toString());
                     this.findById();
                     break;
                 case FindByName:
@@ -85,7 +83,7 @@ public class StartUI {
      * */
     private void createItem() {
         System.out.println("------------ Add new item --------------");
-        String name = this.input.ask("Input numper item :");
+        String name = this.input.ask("Input number item :");
         String desc = this.input.ask("Input desc item :");
         Item item = new Item(name, desc);
         this.tracker.add(item);
@@ -158,15 +156,10 @@ public class StartUI {
                         + "Name: " + item.getName() + "\n"
                         + "Description: " + item.getDecs());
             }
-        }else {
+        }else{
             System.out.println("No data found with name " + name + ".");
         }
     }
-
-    /**
-     * Запускт программы.
-     * @param args
-     */
 
     public static void main(String[] args) {
         new StartUI(new ConsoleInput(), new Tracker()).init();

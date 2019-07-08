@@ -45,24 +45,8 @@ public class Item {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getDecs() {
         return desc;
-    }
-
-    public void setDecs(String decs) {
-        this.desc = decs;
-    }
-
-    public long getTime() {
-        return time;
-    }
-
-    public void setTime(long time) {
-        this.time = time;
     }
 
     @Override

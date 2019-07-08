@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 public class Tracker {
 
-    private Item[] items = new Item[100];
+    private final Item[] items = new Item[100];
     private int position = 0;
 
     /**
@@ -29,10 +29,9 @@ public class Tracker {
     }
 
 
-    public Item add (Item item){
+    public void add (Item item){
         item.setId(this.generateId());
         this.items[this.position++] = item;
-        return item;
     }
     /**
      * Метод, заменяющий ячейку в массиве this.items.
@@ -41,17 +40,15 @@ public class Tracker {
      * @param item объект на который нужно заменить
      * @return true если успешно, иначе false.
      */
-    public boolean replace(String id, Item item) {
-        boolean result = false;
-        for (int i = 0; i < this.position; i++) {
-            if (this.items != null && this.items[i].getId().equals(id)) {
+    public void replace(String id, Item item) {
+      for (int i = 0; i < this.position; i++) {
+            if (this.items[i].getId().equals(id)) {
                 this.items[i] = item;
                 this.items[i].setId(id);
-                result = true;
+
                 break;
             }
         }
-        return result;
     }
 
     /**
@@ -64,7 +61,7 @@ public class Tracker {
     public boolean delete(String id){
         boolean result = false;
         for (int count = 0; count < this.position; count++) {
-            if (this.items != null && this.items[count].getId().equals(id)) {
+            if (this.items[count].getId().equals(id)) {
                 System.arraycopy(this.items, count + 1, this.items, count, this.position - count - 1);
                 this.items[this.position - 1] = null;
                 result = true;
