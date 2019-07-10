@@ -29,10 +29,14 @@ public class Tracker {
     }
 
 
-    public void add (Item item){
+    public Item add (Item item){
         item.setId(this.generateId());
         this.items[this.position++] = item;
+        return item;
     }
+
+
+
     /**
      * Метод, заменяющий ячейку в массиве this.items.
      *
