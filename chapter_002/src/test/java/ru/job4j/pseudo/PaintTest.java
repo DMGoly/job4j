@@ -6,15 +6,21 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class PaintTest {
+    // получаем ссылку на стандартный вывод в консоль.
+    PrintStream stdout = System.out;
+    // Создаем буфур для хранения вывода.
+    ByteArrayOutputStream out = new ByteArrayOutputStream();
+    public void loadOutput() {
+        System.setOut(new PrintStream(this.out));
+    }
+    public void backOutput() {
+        System.setOut(this.stdout);
+    }
+
+
     @Test
     public void whenDrawSquare() {
-        // получаем ссылку на стандартный вывод в консоль.
-        PrintStream stdout = System.out;
-        // Создаем буфур для хранения вывода.
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        //Заменяем стандартный вывод на вывод в пямять для тестирования.
-        System.setOut(new PrintStream(out));
-        // выполняем действия пишушиее в консоль.
+        this.loadOutput();
         new Paint().draw(new Square());
         // проверяем результат вычисления
         assertThat(
@@ -35,13 +41,7 @@ public class PaintTest {
 
     @Test
     public void whenDrawTriangle() {
-        // получаем ссылку на стандартный вывод в консоль.
-        PrintStream stdout = System.out;
-        // Создаем буфур для хранения вывода.
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        //Заменяем стандартный вывод на вывод в пямять для тестирования.
-        System.setOut(new PrintStream(out));
-        // выполняем действия пишушиее в консоль.
+        this.loadOutput();
         new Paint().draw(new Triangle());
         // проверяем результат вычисления
         assertThat(
